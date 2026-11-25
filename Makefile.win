@@ -1,0 +1,49 @@
+# Project: Project
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = src/core/level.o src/core/logger.o src/core/main_core.o src/core/physics.o src/core/simulator.o src/core/switches.o src/core/util.o src/core/viewer_iface_core.o
+LINKOBJ  = src/core/level.o src/core/logger.o src/core/main_core.o src/core/physics.o src/core/simulator.o src/core/switches.o src/core/util.o src/core/viewer_iface_core.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"X:/PF project/PF-Project-TheLastTrain-26i2514/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"X:/PF project/PF-Project-TheLastTrain-26i2514/include"
+BIN      = Project.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++17 -Wall -Wextra                                                                                                       -Iinclude
+CFLAGS   = $(INCS) -std=gnu++17 -Wall -Wextra                                                                                                       -Iinclude
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+src/core/level.o: src/core/level.cpp
+	$(CPP) -c src/core/level.cpp -o src/core/level.o $(CXXFLAGS)
+
+src/core/logger.o: src/core/logger.cpp
+	$(CPP) -c src/core/logger.cpp -o src/core/logger.o $(CXXFLAGS)
+
+src/core/main_core.o: src/core/main_core.cpp
+	$(CPP) -c src/core/main_core.cpp -o src/core/main_core.o $(CXXFLAGS)
+
+src/core/physics.o: src/core/physics.cpp
+	$(CPP) -c src/core/physics.cpp -o src/core/physics.o $(CXXFLAGS)
+
+src/core/simulator.o: src/core/simulator.cpp
+	$(CPP) -c src/core/simulator.cpp -o src/core/simulator.o $(CXXFLAGS)
+
+src/core/switches.o: src/core/switches.cpp
+	$(CPP) -c src/core/switches.cpp -o src/core/switches.o $(CXXFLAGS)
+
+src/core/util.o: src/core/util.cpp
+	$(CPP) -c src/core/util.cpp -o src/core/util.o $(CXXFLAGS)
+
+src/core/viewer_iface_core.o: src/core/viewer_iface_core.cpp
+	$(CPP) -c src/core/viewer_iface_core.cpp -o src/core/viewer_iface_core.o $(CXXFLAGS)

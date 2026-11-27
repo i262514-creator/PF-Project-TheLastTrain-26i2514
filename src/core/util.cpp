@@ -4,7 +4,6 @@
 #include <iostream>
 
 using namespace std;
-// Primitive helper utilities, clamping, and screen control
 
 int clampInt(int val, int minVal, int maxVal){
     
@@ -49,6 +48,9 @@ bool stringEquals(const char *a, const char *b){
 
 
 void printHeader(const char *title ){
+    if(title==nullptr){
+    return;}
+
     cout<<"\n=== "<<title<<" ===\n"; 
 
 }
